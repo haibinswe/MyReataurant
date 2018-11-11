@@ -20,4 +20,12 @@ public class CategoryServiceImpl  implements CategoryService{
 	}
 
 
+	@Override
+	public Category get(int id) {
+		return categoryMapper.get(id);
+	}
+
+
+
+
 }

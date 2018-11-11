@@ -41,13 +41,4 @@ public class CategoryController {
 		return mav;
 	}
 
-	@RequestMapping("/login")
-	public ModelAndView loginChk(Category category) {
-		ModelAndView mav = new ModelAndView();
-		if(categoryService.loginCheck(category))
-		mav.setViewName("welcome");
-		else
-			mav.setViewName("login");
-		return mav;
-	}
 }
