@@ -3,6 +3,8 @@ package com.javaee.controller;
 
 import java.util.List;
 
+import javax.crypto.Mac;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -15,12 +17,13 @@ import com.javaee.pojo.Category;
 import com.javaee.service.CategoryService;
 import com.javaee.util.Page;
 
-// 告诉spring mvc这是�?个控制器�?
+// 告诉spring mvc这是�?个控制器�?
 @Controller
 @RequestMapping("")
 public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
+	
 
 	@RequestMapping("listCategory")
 	public ModelAndView listCategory(Page page){
@@ -38,4 +41,13 @@ public class CategoryController {
 		return mav;
 	}
 
+	@RequestMapping("/login")
+	public ModelAndView loginChk(Category category) {
+		ModelAndView mav = new ModelAndView();
+		if(categoryService.loginCheck(category))
+		mav.setViewName("welcome");
+		else
+			mav.setViewName("login");
+		return mav;
+	}
 }
