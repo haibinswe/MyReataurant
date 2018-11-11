@@ -17,7 +17,7 @@ import com.javaee.pojo.Category;
 import com.javaee.service.CategoryService;
 import com.javaee.util.Page;
 
-// 告诉spring mvc这是�?个控制器�?
+// 告诉spring mvc这是个控制器
 @Controller
 @RequestMapping("")
 public class CategoryController {
