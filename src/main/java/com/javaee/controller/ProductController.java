@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.javaee.mapper.CategoryMapper;
-import com.javaee.mapper.ProductMapper;
 import com.javaee.pojo.Category;
 import com.javaee.pojo.Product;
 import com.javaee.service.CategoryService;
