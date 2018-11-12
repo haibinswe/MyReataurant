@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.javaee.pojo.Category;
 
-@Service
 public interface CategoryService {
 
 	List<Category> list();

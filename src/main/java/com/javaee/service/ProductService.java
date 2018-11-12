@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.javaee.pojo.Category;
 import com.javaee.pojo.Product;
 
-@Service
+
 public interface ProductService {
 
 	List<Product> list(Map m);

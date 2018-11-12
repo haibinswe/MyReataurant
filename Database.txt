@@ -1,0 +1,101 @@
+--用户表
+create table users
+(	
+	userId int auto_increment,
+	userName varchar(32),
+	password varchar(16),
+	email varchar(32),
+	phone varchar(11),
+	address varchar(64),
+	primary key(userId)
+);
+
+--商家表
+create table shop
+(
+	shopId int auto_increment,
+	shopName varchar(32),
+	owner varchar(32),
+	password varchar(16),
+	shopDetail varchar(256),
+	shopTel varchar(15),
+	shopAddr varchar(64),
+	shopImg varchar(256),
+	shopClass varchar(32),
+	primary key(shopId)
+);
+
+--菜品表
+create table dish
+(
+	dishId int auto_increment,
+	dishName varchar(32),
+	dishPrice decimal(10,2),
+	dishDetail varchar(256),
+	dishImg varchar(256),
+	dishClass varchar(32),  --菜品类别
+	shopId int,             --菜品所属商家
+	primary key(dishId),
+	foreign key(shopId) references shop(shopId),
+);
+
+--订单表
+create table order
+(
+	orderId int auto_increment,
+	userId varchar int,
+	shopId int,
+	status int, --  0-未付款，1-已付款
+	createDate timestamp,
+	totalPrice decimal(10,2),
+	primary key(orderId),
+	foreign key(userId) references users(userId),
+	foreign key(shopId) references shop(shopId)
+);
+
+--订单详情表
+create table orderItem
+(
+	itemId int auto_increment,
+	dishId int,
+	orderId int,
+	quantity int,
+	primary key(itemId),
+	foreign key(dishId) references dish(dishId),
+	foreign key(orderId) references order(orderId)
+);
+
+--优惠券
+create table coupon
+(
+	couponId int auto_increment,
+	couponDetail varchar(128),
+	orderPrice decimal(10,2),
+	discount decimal(10,2),
+	startDate date,
+	endDate date,
+	primary key(couponId)
+);
+
+--用户优惠券
+create table userCoupon
+(
+	ucId int auto_increment,
+	userId int,
+	couponId int,
+	quantity int,
+	primary key(ucId),
+	foreign key(userId) references user(userId),
+	foreign key(couponId) references coupon(couponId)
+);
+
+--评论
+create table comment
+(
+	commentID int auto_increment,
+	userId int,
+	shopId int,
+	content varchar(256),
+	commentTime timestamp,
+	primary key(commentID)
+);
