@@ -5,8 +5,8 @@
 订餐管理系统是为商家和用户开发的一套在线订餐平台，旨在合理化安排餐厅的工作，提高商家的经营管理效率以及方便用户的用餐，在传统商家与订餐者之间架起了一道绿色通道。通过这个平台，商家可以更加方便以及合理地经营自己的餐馆，提交日常销售量；用户可以更加方便的浏览餐馆与选择自己合适的菜式下单，更加方便快捷，实现用户与商家的双赢。
 
 ## 2、使用技术与开发环境：
-（1）该系统主要使用SpringMVC+Spring+Mybatis+Oracle搭建。<br/>
-（2）该系统的开发环境是：Ecplise+JDK1.8+Tomcat9+SpringMVC4.3.9+Spring4.3.9+Mybatis3.4.4+Oracle11g<br/>
+（1）该系统主要使用SpringMVC+Spring+Mybatis+Mysql搭建。<br/>
+（2）该系统的开发环境是：Ecplise+JDK1.8+Tomcat9+SpringMVC4.3.9+Spring4.3.9+Mybatis3.4.4+Mysql<br/>
 （3）系统主要分成四层：表现层+web层+业务逻辑层+数据服务层：<br/>
 &ensp; &ensp; 表现层主要使用JSP+JS+Ajax编写;<br/>
 &ensp; &ensp; SpringMVC主要负责web层的管理;<br/>
