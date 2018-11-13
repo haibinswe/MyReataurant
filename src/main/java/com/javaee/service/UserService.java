@@ -19,9 +19,6 @@ public interface UserService {
 	
 	void logout(User user);
 	
-	List<Coupon> getCoupon(User user);
+	
 
-	
-	
-	
 }

@@ -1,7 +1,10 @@
 package com.javaee.service;
 
+import java.util.HashMap;
 import java.util.List;
 
+import com.javaee.pojo.CartItem;
+import com.javaee.pojo.Dish;
 import com.javaee.pojo.Order;
 import com.javaee.pojo.OrderItem;
 import com.javaee.pojo.Shop;
@@ -30,15 +33,24 @@ public interface OrderService {
 	Order getOrderDetails(int orderId);
 	
 	/*
-	 * 生成订单
+	 * 添加订单
 	 */
 	int addOrder(Order order);
+	
+	/*
+	 * 生成订单
+	 */
+	Order createOrder(Integer userId,Integer shopId,HashMap cart);
 	
 	/*
 	 * 删除订单
 	 */
 	int deleteOrder(Order order);
+		
+	void addToCart(CartItem cartItem,HashMap cart);
 	
+	void deleteFromCart(Integer dishId,HashMap cart);
 	
+	void updateCart(CartItem cartItem,HashMap<Integer, CartItem> cart);
 	
 }
